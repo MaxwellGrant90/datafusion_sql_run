@@ -1,0 +1,24 @@
+
+file_name = "sql_out" #File name to save to.
+
+directory = "/foo/" # Directory to save to.
+format = ".parquet" # File format to save to.
+compression = "snappy" # Compression type to save to.
+
+print = true # Prints the output to terminal.
+
+[[register]] # Parquet tables to register to the SessionContext.
+table_name_1 = "/foo1.parquet"
+table_name_2 = "/foo2.parquet"
+
+[sql_text] # An array of SQL statements. The last SQL statement will output to file.
+sql = [
+"""
+SELECT *
+FROM table_name_1
+""",
+"""
+SELECT *
+FROM table_name_2
+"""
+]
