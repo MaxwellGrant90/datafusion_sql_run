@@ -15,10 +15,10 @@ table_name_2 = "/foo2.parquet"
 sql = [
 """
 SELECT *
-FROM table_name_1
+FROM table_name_1;
 """,
 """
 SELECT *
-FROM table_name_2
+FROM table_name_2;
 """
 ]
