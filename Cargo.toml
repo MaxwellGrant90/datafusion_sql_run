@@ -1,0 +1,15 @@
+[package]
+name = "sql"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+datafusion = "11.0"
+arrow = { version = "31.0", default-features = false, features = ["prettyprint"] }
+serde = { version = "1.0.152", features = [ "derive" ] }
+serde_derive = "1.0.152"
+toml = "0.5.11"
+parquet = { version = "31.0.0", default-features = false, features = ["arrow", "snap"] }
+futures = "0.3.25"
