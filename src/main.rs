@@ -49,7 +49,6 @@ fn main() {
                         println!("\ncount: {}\n\n-sql-start----------\n{}-sql-end------------", &count, &config.sql_text.sql[i]);
                         if i == sql_stmt_len_iter - 1 {
                             let batch_grp = block_on(output(&context, &config.sql_text.sql[i]));
-                            //let file = fs::File::create(&file_path);
                             match fs::File::create(&file_path) {
                                 Ok(path_val) => {
                                     let file = &path_val;
@@ -69,7 +68,7 @@ fn main() {
                                     };
                                     writer.close().unwrap();
                                     if &config.print == &true {
-                                            print_batches(&batch_grp).unwrap();
+                                        print_batches(&batch_grp).unwrap();
                                     }
                                 }
                                 Err(e) => println!("error -> cannot open file path to save to. Check if directory exists.\t{}\n{}", e, &file_path),
